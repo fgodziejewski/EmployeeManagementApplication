@@ -37,19 +37,19 @@ public class EmployeeResource {
     //Postmaping, because I will be make changes in the datebase
     @PostMapping("/add")
     public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee){ //it will return the response entity of an employee
-        Employee newEmployee = employeeService.addEmployee(employee);   // expect wole employee object in json format from user
+        Employee newEmployee = employeeService.addEmployee(employee);   // expect whole employee object in json format from user
         return new ResponseEntity<>(newEmployee, HttpStatus.CREATED);
     }
 
     @PutMapping("/update")
     public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee){ //it will return the response entity of an employee
-        Employee updateEmployee = employeeService.addEmployee(employee);   // expect wole employee object in json format from user
+        Employee updateEmployee = employeeService.addEmployee(employee);   // expect whole employee object in json format from user
         return new ResponseEntity<>(updateEmployee, HttpStatus.OK);
     }
     /* this method doest return anything so I pass question mark in ResponseEntity*/
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteEmployee(@PathVariable("id") Long id){ //it will return the response entity of an employee
-        employeeService.deleteEmployee(id);   // expect wole employee object in json format from user
+        employeeService.deleteEmployee(id);   // expect whole employee object in json format from user
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
