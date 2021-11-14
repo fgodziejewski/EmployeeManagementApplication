@@ -43,7 +43,7 @@ public class EmployeeResource {
 
     @PutMapping("/update")
     public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee){ //it will return the response entity of an employee
-        Employee updateEmployee = employeeService.addEmployee(employee);   // expect whole employee object in json format from user
+        Employee updateEmployee = employeeService.addEmployee(employee);   // expect wholee employee object in json format from user
         return new ResponseEntity<>(updateEmployee, HttpStatus.OK);
     }
     /* this method doest return anything so I pass question mark in ResponseEntity*/
